@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo — Minha Loja</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topo">
+  <div class="topo-conteudo">
+    <a href="index.html" class="logo" id="logo-loja">Loja</a>
+    <nav class="menu">
+      <a href="index.html">Catálogo</a>
+      <a href="painel.html">Painel da Loja</a>
+      <a href="carrinho.html" class="carrinho-link">Carrinho <span class="carrinho-badge" id="carrinho-badge">0</span></a>
+      <a href="conta.html" id="link-conta">Entrar</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <h1>Catálogo</h1>
+  <p class="subtitulo" id="loja-slogan"></p>
+
+  <div id="mensagens"></div>
+
+  <form id="form-filtros" class="filtros">
+    <input type="text" id="filtro-busca" placeholder="Buscar produto...">
+    <select id="filtro-categoria">
+      <option value="">Todas as categorias</option>
+    </select>
+    <select id="filtro-ordenar">
+      <option value="nome-asc">Nome (A-Z)</option>
+      <option value="nome-desc">Nome (Z-A)</option>
+      <option value="preco-asc">Menor preço</option>
+      <option value="preco-desc">Maior preço</option>
+      <option value="avaliacao-desc">Melhor avaliados</option>
+    </select>
+    <button class="botao" type="submit">Filtrar</button>
+  </form>
+
+  <div class="grid-produtos" id="grid-produtos"></div>
+  <div class="paginacao" id="paginacao"></div>
+</main>
+
+<footer class="rodape">Trabalho de Banco de Dados — Loja Virtual</footer>
+
+<script src="js/config.js"></script>
+<script src="js/util.js"></script>
+<script src="js/api.js"></script>
+<script src="js/catalogo.js"></script>
+</body>
+</html>

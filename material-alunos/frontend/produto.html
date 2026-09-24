@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Produto — Minha Loja</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topo">
+  <div class="topo-conteudo">
+    <a href="index.html" class="logo" id="logo-loja">Loja</a>
+    <nav class="menu">
+      <a href="index.html">Catálogo</a>
+      <a href="painel.html">Painel da Loja</a>
+      <a href="carrinho.html" class="carrinho-link">Carrinho <span class="carrinho-badge" id="carrinho-badge">0</span></a>
+      <a href="conta.html" id="link-conta">Entrar</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <p><a href="index.html">&larr; Voltar ao catálogo</a></p>
+
+  <div id="produto-conteudo" class="produto-detalhe card">Carregando...</div>
+
+  <section style="margin-top:40px">
+    <h2>Avaliações</h2>
+    <div id="lista-avaliacoes">Carregando avaliações...</div>
+  </section>
+
+  <section style="margin-top:30px" class="card">
+    <h3>Deixe sua avaliação</h3>
+    <div id="mensagens-avaliacao"></div>
+    <form id="form-avaliacao">
+      <div class="campo">
+        <label for="avaliacao-nota">Nota</label>
+        <select id="avaliacao-nota" required>
+          <option value="5">5 - Excelente</option>
+          <option value="4">4 - Muito bom</option>
+          <option value="3">3 - Bom</option>
+          <option value="2">2 - Ruim</option>
+          <option value="1">1 - Péssimo</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label for="avaliacao-comentario">Comentário (opcional)</label>
+        <textarea id="avaliacao-comentario" rows="3"></textarea>
+      </div>
+      <button type="submit" class="botao">Enviar avaliação</button>
+    </form>
+  </section>
+</main>
+
+<footer class="rodape">Trabalho de Banco de Dados — Loja Virtual</footer>
+
+<script src="js/config.js"></script>
+<script src="js/util.js"></script>
+<script src="js/api.js"></script>
+<script src="js/produto.js"></script>
+</body>
+</html>

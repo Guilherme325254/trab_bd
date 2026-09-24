@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrinho — Minha Loja</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topo">
+  <div class="topo-conteudo">
+    <a href="index.html" class="logo" id="logo-loja">Loja</a>
+    <nav class="menu">
+      <a href="index.html">Catálogo</a>
+      <a href="painel.html">Painel da Loja</a>
+      <a href="carrinho.html" class="carrinho-link">Carrinho <span class="carrinho-badge" id="carrinho-badge">0</span></a>
+      <a href="conta.html" id="link-conta">Entrar</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <h1>Seu carrinho</h1>
+  <div class="card" id="carrinho-conteudo">Carregando...</div>
+  <div class="card" id="resumo-carrinho" style="margin-top:16px;max-width:320px;margin-left:auto"></div>
+</main>
+
+<footer class="rodape">Trabalho de Banco de Dados — Loja Virtual</footer>
+
+<script src="js/config.js"></script>
+<script src="js/util.js"></script>
+<script src="js/api.js"></script>
+<script src="js/carrinho.js"></script>
+</body>
+</html>

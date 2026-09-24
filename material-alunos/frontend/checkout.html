@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finalizar compra — Minha Loja</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topo">
+  <div class="topo-conteudo">
+    <a href="index.html" class="logo" id="logo-loja">Loja</a>
+    <nav class="menu">
+      <a href="index.html">Catálogo</a>
+      <a href="painel.html">Painel da Loja</a>
+      <a href="carrinho.html" class="carrinho-link">Carrinho <span class="carrinho-badge" id="carrinho-badge">0</span></a>
+      <a href="conta.html" id="link-conta">Entrar</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <h1>Finalizar compra</h1>
+
+  <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:24px" id="checkout-grid">
+    <div class="card" id="checkout-form-container">
+      <div id="identificacao-container"></div>
+
+      <form id="form-checkout">
+        <h3>Endereço de entrega</h3>
+        <div id="mensagens-checkout"></div>
+        <div class="campo">
+          <label for="endereco">Endereço</label>
+          <input type="text" id="endereco" required>
+        </div>
+
+        <h3>Cupom de desconto</h3>
+        <div id="mensagens-cupom"></div>
+        <div class="campo" style="flex-direction:row;gap:8px">
+          <input type="text" id="cupom" placeholder="Código do cupom" style="flex:1">
+          <button type="button" class="botao secundario" id="botao-aplicar-cupom">Aplicar</button>
+        </div>
+
+        <button type="submit" class="botao" id="botao-finalizar" style="width:100%;margin-top:10px">
+          Confirmar pedido
+        </button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>Resumo do pedido</h3>
+      <div id="itens-resumo"></div>
+      <div id="totais-resumo" style="margin-top:12px"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="rodape">Trabalho de Banco de Dados — Loja Virtual</footer>
+
+<script src="js/config.js"></script>
+<script src="js/util.js"></script>
+<script src="js/api.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>

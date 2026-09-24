@@ -1,0 +1,417 @@
+/* ======================================================================
+   Estilo base da loja. Troque as variáveis abaixo para dar a cara do
+   tema do seu grupo (cores, nada mais precisa mudar para a loja
+   funcionar visualmente diferente). */
+
+:root {
+  --cor-primaria: #5b5ce4;
+  --cor-primaria-escura: #4344b5;
+  --cor-fundo: #f6f7fb;
+  --cor-card: #ffffff;
+  --cor-texto: #1f2333;
+  --cor-texto-suave: #6b7080;
+  --cor-borda: #e3e5ee;
+  --cor-sucesso: #1c9d6b;
+  --cor-erro: #d64545;
+  --cor-aviso: #b8860b;
+  --raio: 10px;
+  --sombra: 0 2px 10px rgba(20, 20, 40, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--cor-primaria);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- cabeçalho ---------- */
+
+header.topo {
+  background: var(--cor-card);
+  border-bottom: 1px solid var(--cor-borda);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.topo-conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--cor-primaria-escura);
+}
+
+nav.menu {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+nav.menu a {
+  color: var(--cor-texto);
+  font-weight: 500;
+}
+
+.carrinho-link {
+  position: relative;
+}
+
+.carrinho-badge {
+  position: absolute;
+  top: -8px;
+  right: -14px;
+  background: var(--cor-erro);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 1px 6px;
+}
+
+/* ---------- geral ---------- */
+
+main {
+  max-width: 1100px;
+  margin: 24px auto 60px;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 4px;
+}
+
+.subtitulo {
+  color: var(--cor-texto-suave);
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: var(--cor-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: 20px;
+}
+
+.botao {
+  display: inline-block;
+  background: var(--cor-primaria);
+  color: white;
+  border: none;
+  border-radius: var(--raio);
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.botao:hover {
+  background: var(--cor-primaria-escura);
+  text-decoration: none;
+}
+
+.botao.secundario {
+  background: transparent;
+  color: var(--cor-primaria);
+  border: 1px solid var(--cor-primaria);
+}
+
+.botao.perigo {
+  background: var(--cor-erro);
+}
+
+.botao:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.campo {
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cor-texto-suave);
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  padding: 10px 12px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.mensagem {
+  padding: 10px 14px;
+  border-radius: var(--raio);
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+.mensagem.erro {
+  background: #fdecec;
+  color: var(--cor-erro);
+  border: 1px solid #f6c6c6;
+}
+
+.mensagem.sucesso {
+  background: #e7f7f0;
+  color: var(--cor-sucesso);
+  border: 1px solid #bfe9d6;
+}
+
+.mensagem.info {
+  background: #eef0fd;
+  color: var(--cor-primaria-escura);
+  border: 1px solid #d4d6fa;
+}
+
+/* ---------- filtros do catálogo ---------- */
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filtros input,
+.filtros select {
+  padding: 9px 12px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  font-size: 0.9rem;
+}
+
+/* ---------- grid de produtos ---------- */
+
+.grid-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.produto-card {
+  background: var(--cor-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--sombra);
+}
+
+.produto-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #eee;
+}
+
+.produto-card .info {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.produto-card .categoria {
+  font-size: 0.75rem;
+  color: var(--cor-texto-suave);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.produto-card .nome {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.produto-card .preco {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--cor-primaria-escura);
+}
+
+.produto-card .avaliacao {
+  font-size: 0.85rem;
+  color: var(--cor-aviso);
+}
+
+.produto-card .acoes {
+  margin-top: auto;
+  display: flex;
+  gap: 8px;
+}
+
+.paginacao {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 26px;
+}
+
+.paginacao button {
+  border: 1px solid var(--cor-borda);
+  background: var(--cor-card);
+  border-radius: var(--raio);
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.paginacao button.ativo {
+  background: var(--cor-primaria);
+  color: white;
+  border-color: var(--cor-primaria);
+}
+
+/* ---------- detalhe do produto ---------- */
+
+.produto-detalhe {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.produto-detalhe img {
+  width: 100%;
+  border-radius: var(--raio);
+  object-fit: cover;
+  aspect-ratio: 4/3;
+}
+
+@media (max-width: 700px) {
+  .produto-detalhe {
+    grid-template-columns: 1fr;
+  }
+}
+
+.avaliacao-item {
+  border-bottom: 1px solid var(--cor-borda);
+  padding: 12px 0;
+}
+
+.avaliacao-item .estrelas {
+  color: var(--cor-aviso);
+}
+
+/* ---------- carrinho / checkout ---------- */
+
+table.tabela {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.tabela th,
+table.tabela td {
+  text-align: left;
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.resumo-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 0.95rem;
+}
+
+.resumo-total.total {
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-top: 1px solid var(--cor-borda);
+  margin-top: 8px;
+  padding-top: 12px;
+}
+
+/* ---------- painel da loja ---------- */
+
+.painel-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.painel-card {
+  background: var(--cor-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 18px;
+  box-shadow: var(--sombra);
+}
+
+.painel-card .rotulo {
+  font-size: 0.8rem;
+  color: var(--cor-texto-suave);
+  text-transform: uppercase;
+}
+
+.painel-card .valor {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--cor-primaria-escura);
+  margin-top: 4px;
+}
+
+.barra-fundo {
+  background: #eceefb;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 10px;
+  margin-top: 6px;
+}
+
+.barra-preenchida {
+  height: 100%;
+  background: var(--cor-primaria);
+}
+
+footer.rodape {
+  text-align: center;
+  color: var(--cor-texto-suave);
+  font-size: 0.85rem;
+  padding: 30px 0;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel da Loja — Minha Loja</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topo">
+  <div class="topo-conteudo">
+    <a href="index.html" class="logo" id="logo-loja">Loja</a>
+    <nav class="menu">
+      <a href="index.html">Catálogo</a>
+      <a href="painel.html">Painel da Loja</a>
+      <a href="carrinho.html" class="carrinho-link">Carrinho <span class="carrinho-badge" id="carrinho-badge">0</span></a>
+      <a href="conta.html" id="link-conta">Entrar</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <h1>Painel da Loja</h1>
+  <p class="subtitulo">Visão geral do negócio, calculada em tempo real a partir do banco de dados.</p>
+
+  <div class="painel-cards" id="painel-cards">Carregando...</div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div class="card">
+      <h3>Mais vendidos</h3>
+      <div id="mais-vendidos">Carregando...</div>
+    </div>
+    <div class="card">
+      <h3>Faturamento por categoria</h3>
+      <div id="faturamento-categoria">Carregando...</div>
+    </div>
+  </div>
+</main>
+
+<footer class="rodape">Trabalho de Banco de Dados — Loja Virtual</footer>
+
+<script src="js/config.js"></script>
+<script src="js/util.js"></script>
+<script src="js/api.js"></script>
+<script src="js/painel.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Ambiente virtual Python
+.venv/
+venv/
+
+# Cache do Python
+__pycache__/
+*.pyc
+
+# Banco gerado pelo init_db.py (versionar só schema.sql e seed.sql)
+material-alunos/database/loja.db
+
+# Arquivos de sistema/editor
+.DS_Store
+.vscode/
+.idea/
